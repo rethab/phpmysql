@@ -1,0 +1,15 @@
+body {
+    background-color: black;
+    color: green;
+    font-size: 15pt;
+}
+
+input {
+    background-color: black;
+    color: white;
+}
+
+a {
+    color: green;
+    text-transform: uppercase;
+}
