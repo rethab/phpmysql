@@ -9,11 +9,11 @@ if (!isset($_SESSION['personen'])) {
 if (isset($_POST['send'])) {
         $name = trim($_POST['name']);
         $age = intval($_POST['age']);
-        $_SESSION['personen'][] = array('name' => $name,
-                                      'age' => $age);
+        $_SESSION['personen'][] = array('name' => $name, 'age' => $age);
         $msg = 'Gespeichert';
 } else if (isset($_POST['reset'])) {
         session_unset();
+        $msg = 'Gelöscht';
 }
 
 ?>
