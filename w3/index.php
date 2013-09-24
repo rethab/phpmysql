@@ -6,10 +6,12 @@ if (isset($_POST['send'])) {
         $subject = $_POST['subject'];
         $text = $_POST['text'];
         $count = intval($_POST['count']);
-        if (mail($to, $subject, $text, 'From: ' . $from)) {
-                $msg = 'Nachricht gesendet';
-        } else {
-                $msg = 'Nachricht konnte nicht gesendet werden';
+        for ($i = 0; $i < $count; $i++) {
+                if (mail($to, $subject, $text, 'From: ' . $from)) {
+                        $msg = 'Nachricht gesendet';
+                } else {
+                        $msg = 'Nachricht konnte nicht gesendet werden';
+                }
         }
 }
 ?>
@@ -21,7 +23,7 @@ if (isset($_POST['send'])) {
         <title>Spam-Machine</title>
         <style>
                 body {font-family: Verdana; font-size: larger;}
-                input[type=submit] { margin: 2em;}
+                input [type=submit] { margin: 2em;}
         </style>
 </head>
 <body>
