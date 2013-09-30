@@ -87,7 +87,7 @@ if (isset($_POST['send'])) {
 		</p>
 
 		<p class="tel">
-			<input type="tel" name="tel" id="tel" placeholder="mail@example.com" required>
+			<input type="tel" name="tel" id="tel" placeholder="079 243 78 66" required>
 			<label for="tel">Telefon</label>
                         <input type="checkbox" name="callback"> Rückruf erforderlich?
 		</p>
@@ -135,7 +135,7 @@ if (isset($_POST['send'])) {
 		</p>
 		
 		<p class="submit">
-			<input type="submit" value="Senden" />
+			<input type="submit" name="send" value="Senden" />
 		</p>
 	</form>
 
