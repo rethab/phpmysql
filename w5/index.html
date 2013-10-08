@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en" ng-app="tasklist">
+<head>
+        <meta charset="utf-8">
+        <title>Todo List</title>
+        <link ref="stylesheet" href="css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular-resource.min.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/services.js"></script>
+        <script src="js/controllers.js"></script>
+</head>
+<body ng-controller="TaskListCtrl">
+        <h1>Task List</h1>
+
+        <h2>New Task</h2>
+        <form name="newtask">
+                <label>What:
+                <input type="text" ng-model="task.what" size="25" required/> <br/>
+                <label>When:
+                <input type="date" ng-model="task.when" required/> <br/>
+                <button ng-click="add()" ng-disabled="isAddDisabled()">Add</button>
+        </form>
+
+        <p>Total {{tasks.length}} Tasks</p>
+        <p>Filter: <input ng-model="query"></p>
+        <p>Order:
+           <select ng-model="orderProp">
+                <option value="what">What</option>
+                <option value="when">When</option>
+           </select>
+        </p>
+        <ul>
+                <li ng-repeat="task in tasks | filter:query | orderBy:orderProp">
+                        {{task.what}} (When: {{task.when}})
+                </li>
+        </ul>
+   <p>Debug: {{ tasks | json }} </p>
+</body>
+</html>
