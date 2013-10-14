@@ -27,16 +27,16 @@ ln -fs /vagrant /var/www
 # from www.thisprogrammingthing.com/2013/getting-started-with-vagrant/
 if [ ! -f /var/log/databasesetup ];
 then
-        echo "CREATE USER 'wordpressuser'@'localhost' IDENTIFIED BY 'wordpresspass'" | mysql -uroot -prootpass
-        echo "CREATE DATABASE wordpress" | mysql -uroot -prootpass
-        echo "GRANT ALL ON wordpress.* TO 'wordpressuser'@'localhost'" | mysql -uroot -prootpass
+        echo "CREATE USER 'taskuser'@'localhost' IDENTIFIED BY 'taskpass'" | mysql -uroot -prootpass
+        echo "CREATE DATABASE taskdb" | mysql -uroot -prootpass
+        echo "GRANT ALL ON taskdb.* TO 'taskuser'@'localhost'" | mysql -uroot -prootpass
         echo "flush privileges" | mysql -uroot -prootpass
 
         touch /var/log/databasesetup
 
-        if [ -f /vagrant/data/initial.sql ];
+        if [ -f /vagrant/initial.sql ];
         then
-                mysql -uroot -prootpass wordpress < /vagrant/data/initial.sql
+                mysql -uroot -prootpass taskdb < /vagrant/initial.sql
         fi
 fi
 
