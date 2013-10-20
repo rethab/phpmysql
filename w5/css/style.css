@@ -1,0 +1,4 @@
+body, input[type="text"], input[type="date"], select {
+    background-color: brown;
+    color: yellow;
+}

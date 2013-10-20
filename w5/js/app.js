@@ -48,7 +48,7 @@ function CreateCtrl($scope, $timeout, $location, Task) {
         }
 }
 
-function ListCtrl($scope, Task) {
+function ListCtrl($scope, $http, $timeout, $location, Task) {
         $scope.tasks = {};
         $scope.orderProp = 'when';
 
@@ -57,8 +57,15 @@ function ListCtrl($scope, Task) {
         });
 
         $scope.remove = function(id) {
-                Task.remove({}, {remove: true,
-                                 id: id});
+                // well...
+                $http.get('tasks.php', {
+                    params: {
+                        remove: true,
+                        id: id
+                    }
+                }).success(function() {
+                    $timeout(function() {$location.path('/'); });
+                });
         };
 }
 

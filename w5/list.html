@@ -1,11 +1,21 @@
 <p>Total {{tasks.length}} Tasks</p>
-<p>Filter: <input ng-model="query"/></p>
-<p>Order:
-   <select ng-model="orderProp">
-        <option value="what">What</option>
-        <option value="when">When</option>
-   </select>
-</p>
+<table>
+    <tr>
+        <td>Filter:</td>
+        <td><input type="text" ng-model="query"/></td>
+    </tr>
+    <tr>
+        <td>Order:&nbsp;</td>
+        <td>
+            <select ng-model="orderProp">
+                <option value="what">What</option>
+                <option value="when">When</option>
+            </select>
+        </td>
+    </tr>
+</table>
+<br />
+<br />
 <table>
         <thead>
                 <tr>
@@ -22,7 +32,7 @@
                 <tr ng-repeat="task in tasks | filter:query | orderBy:orderProp">
                         <td>{{task.what}}</td>
                         <td>{{task.when}}</td>
-                        <td>
+                        <td>&nbsp;
                                 <a href="#/edit/{{task.id}}">
                                         <i class="icon-pencil"></i>
                                 </a>
