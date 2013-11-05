@@ -1,9 +1,9 @@
-<?php if (!isset($entries) || empty($entries)): ?>
+<?php if (!isset($this->_['entries']) || empty($this->_['entries'])): ?>
     <p>Keine Einträge vorhanden</p>
 <?php else:
 
         $first = true;
-        foreach ($entries as $entry) {
+        foreach ($this->_['entries'] as $entry) {
 
                // display hr before each except first
                if (!$first) { echo '<hr>'; } 
