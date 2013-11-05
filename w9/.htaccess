@@ -1,2 +1,11 @@
-RewriteEngine on
-RewriteRule ^(.*)$ index.php?q=$1 [L,QSA]
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+    RewriteBase /
+
+    #skip existing files or directories
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    #everything else goes to index.php
+    RewriteRule ^ index.php?uri=%{REQUEST_URI}&%{QUERY_STRING}
+
+</IfModule>

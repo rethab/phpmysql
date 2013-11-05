@@ -2,6 +2,6 @@
 
 require_once '../common/Request.php';
 
-class CommandResolver {
+interface CommandResolver {
     public function getCommand(Request $request);
 }
