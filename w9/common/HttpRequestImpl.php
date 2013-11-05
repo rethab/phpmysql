@@ -6,7 +6,13 @@ class HttpRequestImpl implements Request
 {
     public function getUri()
     {
-        return $_GET['uri'];
+        if(isset($_GET['uri'])){
+            $uri = $_GET['uri'];
+        }else{
+            $uri = ""; 
+        }
+        
+        return $uri;
     }
 
     public function getParameterNames()
