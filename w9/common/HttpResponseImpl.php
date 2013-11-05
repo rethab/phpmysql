@@ -2,6 +2,8 @@
 
 class HttpResponseImpl implements Response
 {
+    private $buffer;
+
     public function setStatus($status)
     {
         http_response_code($status);
@@ -13,10 +15,12 @@ class HttpResponseImpl implements Response
 
     public function write($data)
     {
-        echo $data;
+        $this->buffer + $data;
     }
 
     public function flush()
     {
+        echo $this->buffer;
+        $this->buffer = null;
     }
 }
