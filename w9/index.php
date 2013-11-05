@@ -6,6 +6,7 @@ require_once "./common/HttpRequestImpl.php";
 require_once "./common/HttpResponseImpl.php";
 require_once "./helper/Flash.php";
 require_once "./controllers/BlogController.php";
+require_once "./views/View.php";
 
 $request = new HttpRequestImpl();
 $response = new HttpResponseImpl();

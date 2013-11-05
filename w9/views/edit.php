@@ -1,5 +1,5 @@
 <form method="post">
-    <input type="hidden" name="id" value="<?= $_GET['id'] ?>">
+    <input type="hidden" name="id" value="<?= $this_['id'] ?>">
 
     <label for="title">Title</label>
     <input type="text" name="title" id="title" value="<?= $this->_['title'] ?>" required />
