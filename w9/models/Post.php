@@ -1,11 +1,8 @@
 <?php
-
-
-require_once 'config.php';
-
+require_once '../common/config.php';
 
 // Model Class representing a Post
-public class Post {
+class Post {
 
     private $id;
     private $created;
