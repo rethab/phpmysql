@@ -9,4 +9,4 @@ require_once "./helper/Flash.php";
 $request = new HttpRequestImpl();
 $response = new HttpResponseImpl();
 
-echo $request->getParameters();
+var_dump($request->getParameterNames());

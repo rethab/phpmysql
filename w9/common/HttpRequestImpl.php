@@ -6,6 +6,7 @@ class HttpRequestImpl implements Request
 {
     public function getParameterNames()
     {
+        return $_GET;
     }
 
     public function issetParameter($name)
