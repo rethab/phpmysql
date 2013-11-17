@@ -10,6 +10,10 @@ class MessageController extends Controller
 		$this->render('hello', array('name' => Yii::app()->request->getParam('name','world')));
 	}
 
+        public function actionGoodbye() {
+            $this->render('goodbye');    
+        }
+
 	// Uncomment the following methods and override them if needed
 	/*
 	public function filters()
