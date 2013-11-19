@@ -8,7 +8,7 @@ class Util {
     public static function sort($values, $field, $order = 'ASC') {
         // do not modify original array directly
         $copy = array_merge(array(), $values);
-        if (!isset($copy[0][$field])) {
+        if (!empty($copy) && !isset($copy[0][$field])) {
             throw new LogicException('Field ' . $field . ' does not exist');
         }
         $neg = -1 * ($order == 'ASC' ? -1 : 1);
