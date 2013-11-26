@@ -34,16 +34,22 @@ return array(
 			'allowAutoLogin'=>true,
 		),
 		// uncomment the following to enable URLs in path-format
-		/*
-		'urlManager'=>array(
-			'urlFormat'=>'path',
-			'rules'=>array(
-				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
-				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
-				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
-			),
-		),
-		*/
+                'urlManager'=>array(
+                    'urlFormat'=>'path',
+                    'rules' => array(
+                            // REST routes for CRUD operations
+                            'POST <controller:\w+>s' => '<controller>/create',
+                            '<controller:\w+>s'      => '<controller>/index',
+                    
+                            'PUT <controller:\w+>/<id:\d+>'    => '<controller>/update',
+                            'DELETE <controller:\w+>/<id:\d+>' => '<controller>/delete',
+                            '<controller:\w+>/<id:\d+>'        => '<controller>/view',
+                    
+                            // normal routes for CRUD operations
+                            '<controller:\w+>s/create' => '<controller>/create',
+                            '<controller:\w+>/<id:\d+>/<action:update|delete>' => '<controller>/<action>',
+                    )
+                ),
 		// uncomment the following to use a MySQL database
 		'db'=>array(
 			'connectionString' => 'mysql:host=localhost;dbname=loc_orm',
