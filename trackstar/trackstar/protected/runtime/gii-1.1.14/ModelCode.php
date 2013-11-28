@@ -2,9 +2,9 @@
 return array (
   'template' => 'default',
   'connectionId' => 'db',
-  'tablePrefix' => '',
+  'tablePrefix' => 'tbl_',
   'modelPath' => 'application.models',
   'baseClass' => 'CActiveRecord',
-  'buildRelations' => '0',
+  'buildRelations' => '1',
   'commentsAsLabels' => '0',
 );
